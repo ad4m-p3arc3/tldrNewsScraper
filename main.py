@@ -17,6 +17,12 @@ soup = BeautifulSoup(contents.text, "html.parser")
 for script in soup(["script", "style"]):
     script.extract()    # rip it out
 
+i = 0
 text = soup.get_text()
+
+f = open("news.txt", "a")
+
+for words in text:
+    f.write()
 
 print(text)
