@@ -1,8 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
+from datetime import date, timedelta
 
-url = "https://tldr.tech/tech/2023-06-01"
+today = str(date.today() - timedelta(days=1))
+print(today)
+x = 0
+url = "https://tldr.tech/tech/"
 
+url = url + today
+
+print(url)
 contents = requests.get(url)
 
 soup = BeautifulSoup(contents.text, "html.parser")
